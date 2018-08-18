@@ -8,6 +8,7 @@ const { spawn } = require('child_process');
 const iconv = require('iconv-lite');
 const express = require('express')
 const cors = require('cors')
+const path = require('path');
 
 
 
@@ -22,7 +23,7 @@ let javaClasspath = 'java -classpath ' + __dirname + '\\javaClasses Server'; //H
 let javaClasspathHEROKU = 'java -classpath ' + __dirname + '/javaClasses Server';
 console.log(javaClasspath)
 
-app.use(express.static(path.resolve(__dirname, '../puhegen/build')));
+app.use(express.static(path.resolve(__dirname, '../puhegen/public')));
 
 
 //Käynnistetään puhegen JAVA ohjelma 
@@ -109,7 +110,7 @@ let luoPuhe = (pituus) =>{
 
 app.get('*',(request, response) =>{
 
-  response.sendFile(path.resolve(__dirname, '../puhegen/build','index.html'))
+  response.sendFile(path.resolve(__dirname, './puhegen/public','index.html'))
   
 })
 
