@@ -110,7 +110,7 @@ let luoPuhe = (pituus) =>{
 
 
 
-
+//"build": "cd puhegen && build",  
 //Port jolle ohjelma avataan
 
 const PORT = process.env.PORT || 3001
