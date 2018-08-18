@@ -1,0 +1,78 @@
+
+
+
+.Title {
+  text-align: left;
+  line-height : 8px;
+  padding: 2px;
+  padding-left: 20px;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  background-color:  #455a64;
+}
+
+.Info {
+  text-align: center;
+  line-height : 16px;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.InputForm {
+  text-align: center;
+  line-height : 8px;
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;  
+  background-color: #e0e0e0;
+}
+
+.Lause{
+  text-align: center;
+  line-height : 24px;
+  padding: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e0e0e0;
+}
+
+.Button{
+  background-color: #718792;
+    border: none;
+    color: white;
+    padding: 10px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.Button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  border-radius: 8px;
+  transform: translateY(2px);
+}
+
+.Lataus{
+  padding: 15px;  
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 10px solid #4db6ac;
+  border-top: 10px solid #3498db;
+  width: 25px;
+  height : 25px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
