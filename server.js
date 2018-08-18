@@ -24,7 +24,7 @@ console.log(javaClasspath)
 
 //Käynnistetään puhegen JAVA ohjelma 
 const child = require('child_process').exec(
-    javaClasspath,
+    javaClasspathHEROKU,
     //encoding --> buffer,joka aihettaa sen että callbackit palauttaa kirjaimet muodossa esim(123,332,342,234)
     //muuten ä å ö tuhoutuisivat. Jostain syystä utf8 ei tue niitä?
     { encoding: 'buffer' },
