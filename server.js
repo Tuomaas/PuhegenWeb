@@ -63,12 +63,18 @@ app.get('/luoUusiPuhe/:length',(request, response) =>{
 
  
   //Luodaan pyynnöstä java ohjelmalle kirjoitettava pyyntö muotoa --> pituus(int) \n(käyttäytyy kuten ENTER)
-  const length = request.params.length;
-  console.log("Vastaan otettiin uuden lauseen teon pyyntö. Pituus : " , length)
-  luoPuhe(length)
+  try{
+    const length = request.params.length;
+    console.log("Vastaan otettiin uuden lauseen teon pyyntö. Pituus : " , length)
+    luoPuhe(length)
+    
+    //TODO miten palauttaa vasta kun puhe on valmis?
+    response.end("Pyyntö vastaan otettu");
+  }catch (error){
+    console.log(error)
+
+  }
   
-  //TODO miten palauttaa vasta kun puhe on valmis?
-  response.end("Pyyntö vastaan otettu");
 })
 
 
@@ -86,8 +92,13 @@ app.get('/puhe',(request, response) =>{
 
 let luoPuhe = (pituus) =>{
 
-  pyyntö = pituus + "\n"
-  child.stdin.write(pyyntö)
+  try{
+    pyyntö = pituus + "\n"
+    child.stdin.write(pyyntö)
+  }catch(error){
+    console.log(error)
+  }
+  
 }
 
 
