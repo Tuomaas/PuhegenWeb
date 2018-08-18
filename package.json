@@ -5,8 +5,12 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+<<<<<<< HEAD
     "heroku-postbuild": "cd puhegen && npm install && start",
 
+=======
+    "heroku-postbuild": "cd puhegen",
+>>>>>>> b899ee23e6c53419c500521a949cd774cdfe205f
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tuomas Toivonen",
