@@ -17,9 +17,13 @@ let router = express.Router()
 let currentPuhe = "TestiALOITUS"; //Edellisin palautettu puhe
 app.use(cors())
 
+let javaClasspath2 = 'java -classpath C:\\Users\\Tuomas\\Desktop\\mooc\\Puhegen\\Java\\javaClasses Server'
+let javaClasspath = 'java -classpath ' + __dirname + '\\javaClasses Server'; //HUOM Server on isolla!
+console.log(javaClasspath)
+
 //Käynnistetään puhegen JAVA ohjelma 
 const child = require('child_process').exec(
-    'java -classpath C:\\Users\\Tuomas\\Desktop\\mooc\\Puhegen\\Java\\javaClasses Server',
+    javaClasspath,
     //encoding --> buffer,joka aihettaa sen että callbackit palauttaa kirjaimet muodossa esim(123,332,342,234)
     //muuten ä å ö tuhoutuisivat. Jostain syystä utf8 ei tue niitä?
     { encoding: 'buffer' },
