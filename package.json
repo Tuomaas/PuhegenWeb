@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "heroku-postbuild": "cd puhegen",
-    "build": "cd puhegen && build",
+    "build": "cd puhegen && react-scripts build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tuomas Toivonen",
