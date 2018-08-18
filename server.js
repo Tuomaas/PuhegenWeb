@@ -19,6 +19,7 @@ app.use(cors())
 
 let javaClasspath2 = 'java -classpath C:\\Users\\Tuomas\\Desktop\\mooc\\Puhegen\\Java\\javaClasses Server'
 let javaClasspath = 'java -classpath ' + __dirname + '\\javaClasses Server'; //HUOM Server on isolla!
+let javaClasspathHEROKU = 'java -classpath ' + __dirname + '/javaClasses Server';
 console.log(javaClasspath)
 
 //Käynnistetään puhegen JAVA ohjelma 
