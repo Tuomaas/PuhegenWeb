@@ -5,6 +5,7 @@ import axios from 'axios' //http pyyntöjen teko kirjasto
 
 
 
+
 class Title extends Component{
   render(){
     return(
@@ -112,7 +113,13 @@ class App extends Component {
   testIfReqIsFresh = (response,serverReqPuhe) =>{
      //Jos palvelimen vastaus on sama kun aikaisemmin --> kysytään uudestaan joka 2,5 sec TODO onko viisasta
      console.log("Katsotaan onko saatu vastaus uusi. Vastaus: ", response.data , " === nykyinen: " , this.state.puhe )
-     if(response.data === this.state.puhe){
+     
+     //herokussa ä on Ã¤ ja ö on Ãļ, joten ne pitää muokata tässä pois
+     let vastausDataMuokattu = response.data
+     vastausDataMuokattu = vastausDataMuokattu.replace("Ãļ", "ö");
+     vastausDataMuokattu = vastausDataMuokattu.replace("Ã¤", "ä");
+     
+     if(vastausDataMuokattu === this.state.puhe){
       //Huomattiin, että saatu vastaus on sama kuin mikä meillä on jo joten pyydetään uudestaan sekunnin päästä
       return new Promise( () =>{
         setTimeout( () =>{
@@ -123,7 +130,7 @@ class App extends Component {
       })
 
     }else{
-      this.setState({puhe : response.data,ladataanko:false}, () => console.log("Muokataan state.puhe uusi state : ", this.state.puhe))
+      this.setState({puhe : vastausDataMuokattu,ladataanko:false}, () => console.log("Muokataan state.puhe uusi state : ", this.state.puhe))
     }
   }
 
