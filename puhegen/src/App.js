@@ -116,8 +116,8 @@ class App extends Component {
      
      //herokussa ä on Ã¤ ja ö on Ãļ, joten ne pitää muokata tässä pois
      let vastausDataMuokattu = response.data
-     vastausDataMuokattu = vastausDataMuokattu.replace("Ãļ", "ö");
-     vastausDataMuokattu = vastausDataMuokattu.replace("Ã¤", "ä");
+     vastausDataMuokattu = vastausDataMuokattu.replace(/Ãļ/gi, "ö");
+     vastausDataMuokattu = vastausDataMuokattu.replace(/Ã¤/gi, "ä");
      
      if(vastausDataMuokattu === this.state.puhe){
       //Huomattiin, että saatu vastaus on sama kuin mikä meillä on jo joten pyydetään uudestaan sekunnin päästä
