@@ -87,7 +87,13 @@ app.get('/',(request, response) =>{
 
 app.get('/puhe',(request, response) =>{
 
-  response.send(currentPuhe);
+  try{
+    response.send(currentPuhe);
+    console.log("Vastattiin :" ,currentPuhe)
+  }catch(error){
+    console.log(error)
+  }
+  
   
 })
 
