@@ -22,6 +22,9 @@ let javaClasspath = 'java -classpath ' + __dirname + '\\javaClasses Server'; //H
 let javaClasspathHEROKU = 'java -classpath ' + __dirname + '/javaClasses Server';
 console.log(javaClasspath)
 
+app.use(express.static(path.resolve(__dirname, '../puhegen/build')));
+
+
 //Käynnistetään puhegen JAVA ohjelma 
 const child = require('child_process').exec(
     javaClasspathHEROKU,
@@ -106,7 +109,7 @@ let luoPuhe = (pituus) =>{
 
 app.get('*',(request, response) =>{
 
-  response.sendFile(path.resolve(__dirname, '../puhegen/build','index.js'))
+  response.sendFile(path.resolve(__dirname, '../puhegen/build','index.html'))
   
 })
 
