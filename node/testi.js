@@ -1,7 +1,7 @@
 
 let iconv = require('iconv-lite');
 
-require("child_process").exec("echo äëïöü",
+require("child_process").exec("echo äëïöüT",
                               { encoding: 'buffer' },
                               function(err, stdout, stderr) {
    // `stdout` and `stderr` are Buffer instances
