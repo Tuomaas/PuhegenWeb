@@ -135,17 +135,20 @@ class App extends Component {
     let serverReqCreate = 'http://localhost:3001/luoUusiPuhe/' + this.state.puhePituus
     let serverReqPuhe = 'http://localhost:3001/puhe/'
 
+    let serverReqCreateProxy = '/luoUusiPuhe/' + this.state.puhePituus
+    let serverReqPuheProxy = '/puhe'
+
     //Kutsutaan palvelin 'http://localhost:3001/luoUusiPuhe/ osoitteella ja sen jälkeen kun saadaan vastaus suoritetaan alempi then()
-    axios.get(serverReqCreate).then(renponse =>{
+    axios.get(serverReqCreateProxy).then(renponse =>{
       //Luodaan uusi promise jota käytetään aync timeouttina eli odotetaan 2sec, ja sen jälkeen kysytään palvelimelta
       //uutta lausetta.
       this.setState({ladataanko:true})
       return new Promise( () =>{
         setTimeout( () =>{
           //tehdään pyyntö palvelimelle ja tuloksen saannin jälkeen asetetaan se stateen.
-          axios.get(serverReqPuhe).then(response =>{
+          axios.get(serverReqPuheProxy).then(response =>{
             
-           this.testIfReqIsFresh(response,serverReqPuhe)
+           this.testIfReqIsFresh(response,serverReqPuheProxy)
             //console.log("vastaus : ", response.data)
             
           })

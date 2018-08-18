@@ -79,11 +79,7 @@ app.get('/luoUusiPuhe/:length',(request, response) =>{
 })
 
 
-app.get('/',(request, response) =>{
 
-  response.send("Moi")
-  
-})
 
 app.get('/puhe',(request, response) =>{
 
@@ -107,6 +103,12 @@ let luoPuhe = (pituus) =>{
   }
   
 }
+
+app.get('*',(request, response) =>{
+
+  response.sendFile(path.resolve(__dirname, '../puhegen/build','index.js'))
+  
+})
 
 
 
