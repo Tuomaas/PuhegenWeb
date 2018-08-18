@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "heroku-postbuild": "cd puhegen && npm install && react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Tuomas Toivonen",
