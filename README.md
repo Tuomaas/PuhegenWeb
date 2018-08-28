@@ -6,7 +6,7 @@ www.vaalipuhe.herokuapp.com
 Sovellus koostuu kahdesta eri osasta, joten ne pitää käynnistää erikseen.
 
 ```
-1. npm start (yleis sijainnissa. Käynnistää palvelimen)
+1. npm start (yleissijainnissa. Käynnistää palvelimen)
 
 2. react-scripts start (puhegen sijainnissa. Täällä on react)
 ```
